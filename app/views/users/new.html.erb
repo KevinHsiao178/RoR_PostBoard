@@ -1,0 +1,27 @@
+<%= provide(:title, 'SingUp') %>
+<div class="col-md-12">
+  <div class="col-md-4 col-md-offset-4">
+    <div class="well">
+      <%= render '/shared/title', title: 'Sign Up'%>
+      <%= form_for @user do |f| %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <br>
+        <%= f.text_field :name, class: "form-control", placeholder: "At least 3 digit..." %>
+      </div>
+      <div class="form-group">
+        <%= f.label :mail, 'E-mail' %>
+        <br>
+        <%= f.text_field :mail, class: "form-control", placeholder: "E-mail address..." %>
+      </div>
+      <div class="form-group">
+        <%= f.label :password %>
+        <br>
+        <%= f.password_field :password, class: "form-control", placeholder: "At least 5 digit..." %>
+      </div>
+      <hr>
+      <%= f.submit(@user.new_record? ? 'Sign up' : 'Update Profile', class: 'btn btn-success') %>
+      <% end %>
+    </div>
+  </div>
+</div>
