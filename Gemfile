@@ -40,14 +40,13 @@ group :development, :test do
   gem 'pry'
 end
 group :test do
-	gem 'minitest-reporters'
-	gem 'mini_backtrace'
+  gem 'minitest-reporters'
+  gem 'mini_backtrace'
   gem 'guard'
-	gem 'guard-minitest'
+  gem 'guard-minitest'
 end
 
 group :production do  
   gem 'pg'
-	gem 'rails_12factor'
+  gem 'rails_12factor'
 end
-

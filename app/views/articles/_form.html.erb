@@ -11,15 +11,13 @@
         <% end %>
       </ul>
     </div>
-  <% end %>
-  
-    <%= f.label :title %><br>
-    <%= f.text_field :title, class: "form-control", placeholder: "Post tile..." %>
-    <%= f.label :text %><br>
-    <%= f.text_area :text, class: "form-control", rows: "5", placeholder: "What are you thinking..." %>
-    <br>
-    <p>
-    <%= f.submit class: "btn btn-success" %>
-    </p>
-
+  <% end %>  
+  <%= f.label :title %><br>
+  <%= f.text_field :title, class: "form-control", placeholder: "Post tile..." %>
+  <%= f.label :text %><br>
+  <%= f.text_area :text, class: "form-control", rows: "5", placeholder: "What are you thinking..." %>
+  <br>
+  <p>
+  <%= f.submit class: "btn btn-success" %>
+  </p>
 <% end %>

@@ -2,29 +2,29 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-1">  
-	<%= render 'shared/title', title: "All Posts"%>
-  	<% @articles.each do |article| %>
+  <%= render 'shared/title', title: "All Posts"%>
+    <% @articles.each do |article| %>
     <div class="thumbnail">
       <div class="caption">
-				<h3><strong><%= link_to "#{article.title}", article_path(article) %></strong></h3>
-				<p><%= article.text %></p>
-				<hr>
-				<div class="text-right">
-					<small >posted by</small>
-					<strong><%= article.user.name %></strong>
-					<small ><%= time_ago_in_words(article.created_at) << " ago"%></small>
-				</div>
+        <h3><strong><%= link_to "#{article.title}", article_path(article) %></strong></h3>
+        <p><%= article.text %></p>
+        <hr>
+        <div class="text-right">
+          <small >posted by</small>
+          <strong><%= article.user.name %></strong>
+          <small ><%= time_ago_in_words(article.created_at) << " ago"%></small>
+        </div>
 
-				<% if article.comments.any? %>
-					<ul class="nav nav-pills" role="tablist">
-	  				<li role="presentation" class="active"><a href='<%= article_path(article) %>'>Comments <span class="badge"><%= article.comments.size %></span></a></li>
-	  			</ul>
-	  		<% end %>
-	  		<%# if logged_in? %>
-					<%#= link_to 'Edit', edit_article_path(article), class: "btn btn-warning" %>
-					<%#= link_to 'Delete', article_path(article), class: "btn btn-danger", method: :delete, data:{ confirm: 'Are you sure?'} %>
-				<%# end %>
-		  </div>
+        <% if article.comments.any? %>
+          <ul class="nav nav-pills" role="tablist">
+            <li role="presentation" class="active"><a href='<%= article_path(article) %>'>Comments <span class="badge"><%= article.comments.size %></span></a></li>
+          </ul>
+        <% end %>
+        <%# if logged_in? %>
+          <%#= link_to 'Edit', edit_article_path(article), class: "btn btn-warning" %>
+          <%#= link_to 'Delete', article_path(article), class: "btn btn-danger", method: :delete, data:{ confirm: 'Are you sure?'} %>
+        <%# end %>
+      </div>
     </div>
     <% end %>
   </div>
